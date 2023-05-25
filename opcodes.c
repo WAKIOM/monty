@@ -59,7 +59,7 @@ void pall(stack_t **stack)
  */
 void pint(stack_t **stack, unsigned int line_number)
 {
-	if (!*stack)
+	if (*stack == NULL)
 	{
 		emptyStack_error(line_number);
 	}
