@@ -12,7 +12,7 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
 	int value;
 
 	opcode = strtok(line, " \t\n");
-	if (!opcode)
+	if (opcode == NULL || opcode[0] == '#')
 		return;
 
 	if (strcmp(opcode, "push") == 0)
