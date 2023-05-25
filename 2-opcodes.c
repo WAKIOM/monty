@@ -57,6 +57,7 @@ void _div(stack_t **stack, unsigned int line_number)
  */
 void mod(stack_t **stack, unsigned int line_number)
 {
+	stack_t *temp;
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		mod_stack_error(line_number);
@@ -68,7 +69,10 @@ void mod(stack_t **stack, unsigned int line_number)
 		zero_error(line_number);
 		return;
 	}
-
+	temp = *stack;
 	(*stack)->next->n %= (*stack)->n;
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
+	free(temp);
 	pop(stack, line_number);
 }
