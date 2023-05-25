@@ -42,7 +42,7 @@ void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
-void nop(void);
+void nop(stack_t **stack, unsigned int line_number);
 void monty_run(const char *file_path);
 void process_line(char *line, unsigned int line_number, stack_t **stack);
 bool is_number(const char *str);
