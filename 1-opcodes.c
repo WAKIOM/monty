@@ -33,7 +33,6 @@ void add(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		add_stack_error(line_number);
-		return;
 	}
 	temp = *stack;
 	(*stack)->next->n += (*stack)->n;
@@ -75,5 +74,26 @@ void pop(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = NULL;
 	}
 
+	free(temp);
+}
+
+/**
+ * sub - Subtracts top element from second top element of stack.
+ * @stack: Double pointer to the stack.
+ * @line_number: Line number of the instruction.
+ */
+void sub(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		sub_stack_error(line_number);
+	}
+
+	temp = *stack;
+	(*stack)->next->n -= (*stack)->n;
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
 	free(temp);
 }

@@ -56,5 +56,14 @@ void error_arguments(void);
 void int_error(unsigned int line);
 void Instruction_error(char *instruction, unsigned int line);
 void open_error(const char *filename);
+void sub(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+void sub_stack_error(unsigned int line_number);
+void mul_stack_error(unsigned int line_number);
+void div_stack_error(unsigned int line_number);
+void zero_error(unsigned int line_number);
+void mod_stack_error(unsigned int line_number);
 #endif
 
