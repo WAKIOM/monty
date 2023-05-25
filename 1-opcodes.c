@@ -30,13 +30,13 @@ void add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
-	if (!*stack || !(*stack)->next)
+	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		add_stack_error(line_number);
+		return;
 	}
-
-	(*stack)->next->n += (*stack)->n;
 	temp = *stack;
+	(*stack)->next->n += (*stack)->n;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
 	free(temp);
