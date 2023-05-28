@@ -22,4 +22,5 @@ void monty_run(const char *file_path)
 		process_line(line, line_number, &stack);
 	}
 	fclose(file);
+	free_stack(&stack);
 }
