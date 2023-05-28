@@ -66,5 +66,8 @@ void div_stack_error(unsigned int line_number);
 void zero_error(unsigned int line_number);
 void mod_stack_error(unsigned int line_number);
 void free_stack(stack_t **stack);
+void pchar(stack_t **stack, unsigned int line_number);
+void pchar_empty_error(unsigned int line_number);
+void range_error(unsigned int line_number);
 #endif
 

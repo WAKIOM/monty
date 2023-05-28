@@ -39,6 +39,10 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
 		mul(stack, line_number);
 	else if (strcmp(opcode, "div") == 0)
 		_div(stack, line_number);
+	else if (strcmp(opcode, "mod") == 0)
+		mod(stack, line_number);
+	else if (strcmp(opcode, "pchar") == 0)
+		pchar(stack, line_number);
 	else if (strcmp(opcode, "nop") == 0)
 	{
 		/* do nothing */

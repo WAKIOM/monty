@@ -62,17 +62,40 @@ void mod(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		mod_stack_error(line_number);
+		return;
 	}
 
 	if ((*stack)->n == 0)
 	{
 		zero_error(line_number);
+		return;
 	}
 	temp = *stack;
 	(*stack)->next->n %= (*stack)->n;
 	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
-	free(temp);
 	if (*stack)
-		pop(stack, line_number);
+		(*stack)->prev = NULL;
+	free(temp);
+}
+
+/**
+ * pchar - Prints the char at the top of the stack.
+ * @stack: Double pointer to the stack.
+ * @line_number: Line number of the instruction.
+ */
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL)
+	{
+		pchar_empty_error(line_number);
+		return;
+	}
+
+	if ((*stack)->n < 0 || (*stack)->n > 127)
+	{
+		range_error(line_number);
+		return;
+	}
+
+	printf("%c\n", (char)(*stack)->n);
 }
