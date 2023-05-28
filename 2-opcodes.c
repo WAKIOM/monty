@@ -58,6 +58,7 @@ void _div(stack_t **stack, unsigned int line_number)
 void mod(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
+
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		mod_stack_error(line_number);
