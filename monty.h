@@ -65,5 +65,6 @@ void mul_stack_error(unsigned int line_number);
 void div_stack_error(unsigned int line_number);
 void zero_error(unsigned int line_number);
 void mod_stack_error(unsigned int line_number);
+void free_stack(stack_t **stack);
 #endif
 

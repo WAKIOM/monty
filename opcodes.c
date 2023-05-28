@@ -32,7 +32,6 @@ void push(stack_t **stack, int value, unsigned int line_number)
 		(*stack)->prev = new_node;
 
 	*stack = new_node;
-	free(new_node);
 }
 
 /**
@@ -50,12 +49,6 @@ void pall(stack_t **stack)
 	{
 		printf("%d\n", current->n);
 		current = current->next;
-	}
-	while (*stack)
-	{
-		current = *stack;
-		*stack = (*stack)->next;
-		free(current);
 	}
 }
 
