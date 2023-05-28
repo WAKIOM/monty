@@ -75,5 +75,6 @@ void mod(stack_t **stack, unsigned int line_number)
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
 	free(temp);
-	pop(stack, line_number);
+	if (*stack)
+		pop(stack, line_number);
 }
