@@ -43,6 +43,8 @@ void process_line(char *line, unsigned int line_number, stack_t **stack)
 		mod(stack, line_number);
 	else if (strcmp(opcode, "pchar") == 0)
 		pchar(stack, line_number);
+	else if (strcmp(opcode, "pstr") == 0)
+		pstr(stack);
 	else if (strcmp(opcode, "nop") == 0)
 	{
 		/* do nothing */

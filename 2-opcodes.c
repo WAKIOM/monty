@@ -99,3 +99,22 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	printf("%c\n", (char)(*stack)->n);
 }
+/**
+ * pstr - Prints the string starting at the top of the stack.
+ * @stack: Double pointer to the stack.
+ */
+void pstr(stack_t **stack)
+{
+    stack_t *current = *stack;
+
+    while (current != NULL && current->n != 0)
+    {
+        if (current->n < 0 || current->n > 127)
+            break;
+
+        printf("%c", (char)current->n);
+        current = current->next;
+    }
+
+    printf("\n");
+}

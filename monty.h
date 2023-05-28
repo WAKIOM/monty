@@ -69,5 +69,6 @@ void free_stack(stack_t **stack);
 void pchar(stack_t **stack, unsigned int line_number);
 void pchar_empty_error(unsigned int line_number);
 void range_error(unsigned int line_number);
+void pstr(stack_t **stack);
 #endif
 
