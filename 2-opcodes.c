@@ -62,13 +62,11 @@ void mod(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		mod_stack_error(line_number);
-		return;
 	}
 
 	if ((*stack)->n == 0)
 	{
 		zero_error(line_number);
-		return;
 	}
 	temp = *stack;
 	(*stack)->next->n %= (*stack)->n;
